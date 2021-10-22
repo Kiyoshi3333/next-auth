@@ -153,7 +153,7 @@ async function getOAuth2AccessToken (code, provider, codeVerifier) {
     params.code_verifier = codeVerifier
   }
 
-  const postData = querystring.stringify(params)
+  const postData = headers['Content-Type'] === 'application/json' ? JSON.stringify(params) : querystring.stringify(params)
 
   return new Promise((resolve, reject) => {
     this._request(
