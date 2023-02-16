@@ -3,7 +3,7 @@ import { Adapter } from "next-auth/adapters"
 import NextAuth, * as NextAuthTypes from "next-auth"
 import { IncomingMessage, ServerResponse } from "http"
 import { Socket } from "net"
-import { NextApiRequest, NextApiResponse } from "internals/utils"
+import { NextApiRequest, NextApiResponse } from "../internals/utils"
 import { AppOptions } from "internals"
 
 const req: NextApiRequest = Object.assign(new IncomingMessage(new Socket()), {
